@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	$('.js-time a').on('click', function() {
+	$('.js-time a').on('click', function(e) {
+		e.preventDefault();
 		var section = $(this).attr('href');
 		$('html, body').animate({
 			scrollTop: $(section).offset().top - 30
@@ -12,6 +13,18 @@ $(document).ready(function() {
 		$('.bonus').css({
 			"display": "none"
 		})
+	});
+	$blocks = $(".share-list li")
+	$buttons = $(".buttons .btn")
+
+	$buttons.click(function(event) {
+		if(!$(this).hasClass('is-active')){
+			$buttons.removeClass('is-active');
+			$blocks.hide();
+
+			$(this).addClass('is-active');
+			$('#'+$(this).data('target')).show();
+		}
 	});
 	// social fixed
 	function stickySocial() {

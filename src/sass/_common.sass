@@ -100,6 +100,25 @@ $green: #a3c04c
 		top: 1px
 	&:hover
 		background-color: lighten($green, 3%)
+.btn_feast, .btn_home
+	@extend %btn
+	+bold
+	font-size: 29px
+	width: 221px
+	height: 63px
+	line-height: 63px
+	text-align: center
+	&:active
+		top: 1px
+	+r(1024)
+		font-size: 24px
+		width: 180px
+		height: 50px
+		line-height: 50px
+.btn_home
+	display: block
+	margin: 40px auto 0
+	text-decoration: none
 .btn-buy
 	@extend %btn
 	text-decoration: none
